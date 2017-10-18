@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let todo of TODOs; let index = index" [class.completed]="todo.completed"> 
+    <input id="todo_{{index}}" type="checkbox" [checked]="todo.completed" (change)="toggleCompletion(index)">
+    <label for="todo_{{index}}">{{ todo.description }}</label> 
+  </li>
+ </ul>

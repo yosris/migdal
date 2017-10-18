@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app/app.component';
+import { TODOModule } from './todo/todo.module';
+import { PakaComponent } from './paka/paka.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PakaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, TODOModule
   ],
   providers: [],
   bootstrap: [AppComponent]

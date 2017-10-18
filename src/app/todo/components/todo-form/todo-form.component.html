@@ -1,0 +1,12 @@
+<!--
+Template for the TODO-form.component
+-->
+
+<form (ngSubmit)="addTODO()">
+  <label>
+    Enter TODO
+  </label>
+  <input type="text" name="TODO" [(ngModel)]="TODOInput" />
+  <br/>
+  <button type="submit">Submit</button>
+</form>
