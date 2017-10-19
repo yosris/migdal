@@ -20,5 +20,6 @@ export class TODOFormComponent {
 
   public addTODO(){
     this._TODOService.addTODO({description:this.TODOInput, completed: false});
+    this.TODOInput = '';
   }
 }
