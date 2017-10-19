@@ -1,12 +1,14 @@
-ul li{
+	ul li{
       list-style: none;
-margin-top: 3px;
+		margin-top: 3px;
+    }
+
+    ul li input{
+    	vertical-align: top;
     }
 
     .completed{
     	text-decoration: line-through;
     }
 
-    ul li input{
-    	vertical-align: top;
-    }
+    
