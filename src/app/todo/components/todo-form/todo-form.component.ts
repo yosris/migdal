@@ -9,7 +9,8 @@ import {TODO} from "../../models/todo";
 
 @Component({
   selector: 'mg-TODO-form',
-  templateUrl: './todo-form.component.html'
+  templateUrl: './todo-form.component.html',
+  styleUrls: ['./todo-form.component.css']
 })
 export class TODOFormComponent {
   public TODOInput : string = '';//{description:'', completed: true};
