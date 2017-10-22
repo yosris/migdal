@@ -19,8 +19,9 @@ export class TODOFormComponent {
 
   }
 
-  public addTODO(){
+  public addTODO(name){
     this._TODOService.addTODO({description:this.TODOInput, completed: false});
     this.TODOInput = '';
+    name.reset();
   }
 }
