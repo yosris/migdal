@@ -4,6 +4,7 @@
 
 import {Component} from '@angular/core';
 import {TODOService} from "../../services/todo.service";
+import {TaskService} from "../../services/task.service";
 import {TODO} from "../../models/todo";
 
 @Component({
@@ -14,8 +15,11 @@ import {TODO} from "../../models/todo";
 export class TODOListComponent{
   public TODOs : TODO[] = [];
 
-  constructor(private _TODOService : TODOService){
+  constructor(private _TODOService : TODOService, private _TaskService : TaskService){
     this.TODOs = _TODOService.getTODOs();
+    //_TaskService.getAllTasks().subscribe((todos : TODO[]) => {
+    //  this.TODOs = todos;
+    //})
     console.log('asas', this.TODOs);
   }
 
