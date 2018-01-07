@@ -14,7 +14,7 @@ import {TODO} from "../../models/todo";
 })
 export class TODOFormComponent {
   public TODOInput : string = '';//{description:'', completed: true};
-
+  public someField: string = '';
   constructor(private _TODOService : TODOService){
 
   }

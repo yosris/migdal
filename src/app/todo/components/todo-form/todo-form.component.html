@@ -20,3 +20,11 @@ Template for the TODO-form.component
 	</div>
   <button [disabled]="name.invalid" type="submit">Submit</button>
 </form>
+
+<form (ngSubmit)="addTODOTest()" name="myForm" #myForm="ngForm">
+	<input type="text" name="somthing" pattern="^[א-ת]*$" #somthing="ngModel" [(ngModel)]="someField">
+	<button type="submit">Submit</button>
+</form>
+
+{{myForm.valid}}
+
