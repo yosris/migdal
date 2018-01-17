@@ -3,9 +3,10 @@
  */
 
 import {Component} from '@angular/core';
-import {TODOService} from "../../services/todo.service";
+import {CounterService} from "../../services/counter.service";
 import {TaskService} from "../../services/task.service";
 import {TODO} from "../../models/todo";
+import {Counter} from "../../models/counter";
 
 @Component({
   selector: 'mg-TODO-list',
@@ -13,21 +14,16 @@ import {TODO} from "../../models/todo";
   styleUrls: ['./todo-list.component.css']
 })
 export class TODOListComponent{
-  public TODOs : TODO[] = [];
+  public Counters : Counter[] = [];
 
-  constructor(private _TODOService : TODOService, private _TaskService : TaskService){
-    this.TODOs = _TODOService.getTODOs();
-    //_TaskService.getAllTasks().subscribe((todos : TODO[]) => {
-    //  this.TODOs = todos;
-    //})
-    console.log('asas', this.TODOs);
+  constructor(private _CounterService : CounterService, private _TaskService : TaskService){
+    this.Counters = _CounterService.getCounters();
+    
+    console.log('asas', this.Counters);
   }
 
   deleteItem(index : number) {
-    this._TODOService.deleteTODO(index);
+    this._CounterService.deleteTODO(index);
   }
 
-  toggleCompletion(indx : number){
-  this.TODOs[indx].completed = !this.TODOs[indx].completed;
-  }
 }

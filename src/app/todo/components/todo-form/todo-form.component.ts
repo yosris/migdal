@@ -4,8 +4,9 @@
  */
 
 import {Component} from '@angular/core';
-import {TODOService} from '../../services/todo.service';
+import {CounterService} from '../../services/counter.service';
 import {TODO} from "../../models/todo";
+import {Counter} from "../../models/counter";
 
 @Component({
   selector: 'mg-TODO-form',
@@ -13,15 +14,14 @@ import {TODO} from "../../models/todo";
   styleUrls: ['./todo-form.component.css']
 })
 export class TODOFormComponent {
-  public TODOInput : string = '';//{description:'', completed: true};
-  public someField: string = '';
-  constructor(private _TODOService : TODOService){
+  public TODOInput : string = '';
+  public CounterInput : number = 0;
+
+  constructor(private _CounterService : CounterService){
 
   }
 
-  public addTODO(name){
-    this._TODOService.addTODO({description:this.TODOInput, completed: false});
-    this.TODOInput = '';
-    name.reset();
+  public addCounter(counter){
+    this._CounterService.addCounter({val:this.CounterInput, createDate: new Date()});
   }
 }

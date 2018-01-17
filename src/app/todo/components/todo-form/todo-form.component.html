@@ -2,29 +2,16 @@
 Template for the TODO-form.component
 -->
 
-<form (ngSubmit)="addTODO(name)">
+<form (ngSubmit)="addCounter(counter)">
   <label>
     Enter TODO
   </label>
-  <input type="text" id="name" name="name" required minlength="4" #name="ngModel" [(ngModel)]="TODOInput" />
+  <input type="number" name="counter" required #counter="ngModel" [(ngModel)]="CounterInput" />
   <br/>
-  <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
-     <div *ngIf="name.errors.required">
-	    TODO description is required.
+  <div *ngIf="counter.invalid && counter.dirty" class="alert alert-danger">
+     <div *ngIf="counter.errors.required">
+	    counter is required.
 	  </div>
 	</div>
-	<div *ngIf="name.invalid && name.touched" class="alert alert-danger">
-	  <div *ngIf="name.errors.minlength">
-	    TODO description must be at least 4 characters long.
-	  </div>
-	</div>
-  <button [disabled]="name.invalid" type="submit">Submit</button>
+  <button [disabled]="counter.invalid" type="submit">Submit</button>
 </form>
-
-<form (ngSubmit)="addTODOTest()" name="myForm" #myForm="ngForm">
-	<input type="text" name="somthing" pattern="^[א-ת]*$" #somthing="ngModel" [(ngModel)]="someField">
-	<button type="submit">Submit</button>
-</form>
-
-{{myForm.valid}}
-
