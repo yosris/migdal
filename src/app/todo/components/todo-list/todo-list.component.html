@@ -1,5 +1,19 @@
-<ul>
-  <li *ngFor="let counter of Counters.reverse(); let index = index"> 
-    <label>{{ counter.val }}, {{counter.createDate | date: 'dd/MM/yyyy HH:mm'}}</label> 
-  </li>
- </ul>
+ <table>
+   <tr>
+     <td>
+       value
+     </td>
+     <td>
+       date
+     </td>
+   </tr>
+      <tr *ngFor="let counter of Counters.reverse(); let index = index">
+          <td>
+              {{ counter.val }}
+          </td>
+          <td>
+              {{counter.createDate | date: 'dd/MM/yyyy HH:mm'}}
+          </td>
+      </tr>
+ </table>
+

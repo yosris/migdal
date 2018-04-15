@@ -2,7 +2,7 @@
 Template for the TODO-form.component
 -->
 
-<form (ngSubmit)="addCounter(counter)">
+<form #myForm="ngForm" (ngSubmit)="addCounter(myForm)">
   <label>
     Enter TODO
   </label>

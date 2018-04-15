@@ -14,7 +14,7 @@ import {Counter} from "../../models/counter";
   styleUrls: ['./todo-list.component.css']
 })
 export class TODOListComponent{
-  public Counters : Counter[] = [];
+  public Counters :  Counter[]= [];
 
   constructor(private _CounterService : CounterService, private _TaskService : TaskService){
     this.Counters = _CounterService.getCounters();
